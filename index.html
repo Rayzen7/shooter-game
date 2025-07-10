@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Module</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./Sprites/shooter.png">
+</head>
+<body>
+    <!-- Home Page -->
+    <section class="home-page">
+        <div class="home-container">
+            <img src="./Sprites/shooter.png" alt="">
+            <div class="home-input">
+                <div class="home-input-head">
+                    <input type="text" placeholder="Input Username" class="username-input">
+                    <select class="home-select">
+                        <option value="" disabled selected>Select Level</option>
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </div>
+                <div class="home-gun">
+                    <label for="gun1">
+                        <img src="./Sprites/gun1.png" alt="">
+                        <input type="radio" name="gun" value="gun1" id="gun1" checked>
+                    </label>
+                    <label for="gun2">
+                        <img src="./Sprites/gun2.png" alt="">
+                        <input type="radio" name="gun" value="gun2" id="gun2">
+                    </label>
+                </div>
+                <div class="home-target">
+                    <label for="target1">
+                        <img src="./Sprites/target1.png" alt="">
+                        <input type="radio" name="target" value="target1" id="target1" checked>
+                    </label>                    
+                    <label for="target2">
+                        <img src="./Sprites/target2.png" alt="">
+                        <input type="radio" name="target" value="target2" id="target2">
+                    </label>                    
+                    <label for="target3">
+                        <img src="./Sprites/target3.png" alt="">
+                        <input type="radio" name="target" value="target3" id="target3">
+                    </label>                    
+                </div>
+            </div>
+            <div class="home-btn">
+                 <button id="play-btn">Play Game</button>
+                 <button id="instruction-btn">Instruction</button>
+            </div>
+        </div>
+
+        <div class="instruction-container">
+            <div class="instruction-head">
+                <h1>How to Play game</h1>
+                <p id="instruction-close">X</p>
+            </div>
+            <div class="instruction-body">
+                <p>1. Input Username</p>
+                <p>2. Point the pointer at the target</p>
+                <p>3. Click to shoot</p>
+                <p>4. Get as many points as possible</p>
+                <p>5. Enjoy!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown -->
+     <div class="countdown-page">
+        <p id="countdown-page-time">3</p>
+     </div>
+
+    <!-- Game Page -->
+     <section class="game-page">
+        <div class="game-page-container">
+            <div class="game-container">
+                <div class="game-header">
+                    <p id="player-username">Player Name: </p>
+                    <p id="player-score">Score: 0</p>
+                    <p id="player-time">Time: </p>
+                </div>
+                <canvas id="gameCanvas" width="1078px" height="652px" style="cursor: none;"></canvas>
+            </div>
+
+            <div class="pause">
+                <h1>Game Pause</h1>
+                <button id="pause-btn">Continuou</button>
+            </div>
+
+            <div class="gameover">
+                <h1>Gameover</h1>
+                <p id="gameover-username">Username: </p>
+                <p id="gameover-score">Score: </p>
+                <div class="gameover-btn">
+                    <button id="save-score-btn">Save Score</button>
+                    <button id="restart-btn">Restart</button>
+                </div>
+            </div>
+    
+            <div class="game-leaderboard">
+                <h1>Leaderboard</h1>
+                <select>
+                    <option value="score">Sort by Last Match</option>
+                </select>
+                <div class="leaderboard">
+                    <div class="leaderboard-container">
+                        <div class="leaderboard-player">
+                            <div>
+                                <p class="leaderboard-name">Thomas Galih</p>
+                                <p class="leaderboard-score">Score: 50</p>
+                            </div>
+                            <button>Detail</button>
+                        </div>
+                        <hr/>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </section>
+
+     <!-- Assets -->
+      <div class="image">
+        <img src="./Sprites/background.jpg" alt="" id="background">
+        <img src="./Sprites/gun1.png" alt="" id="gun1-image">
+        <img src="./Sprites/gun2.png" alt="" id="gun2-image">
+        <img src="./Sprites/pointer.png" alt="" id="pointer-image">
+        <img src="./Sprites/boom.png" alt="" id="boom-image">
+        <img src="./Sprites/target1.png" alt="" id="target1-image">
+        <img src="./Sprites/target2.png" alt="" id="target2-image">
+        <img src="./Sprites/target3.png" alt="" id="target3-image">
+        <audio id="shoot-audio">
+            <source src="./Sprites/audio/shoot.mp3" >
+        </audio>
+        <audio id="gameover-audio">
+            <source src="./Sprites/audio/gameover.mp3" >
+        </audio>
+      </div>
+
+    <script src="./main.js"></script>
+</body>
+</html>
